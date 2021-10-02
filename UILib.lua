@@ -64,7 +64,7 @@ Close.MouseButton1Click:Connect(function()
 			Close.Rotation = 180
 		else
 			toggled = true
-			Main:TweenSize(UDim2.new(0, 324,0, 350), "InOut", "Quad", 0.5)
+			Main:TweenSize(UDim2.new(0, 324,0, 375), "InOut", "Quad", 0.5)
 			wait(0.4)
 			Close.Rotation = 0
 		end
