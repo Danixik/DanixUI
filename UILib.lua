@@ -163,7 +163,7 @@ local function Fire()
 enabled = not enabled
 OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
 OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
-OnOfToggle.Text = enabled and utf8.char(10003) or ""
+OnOfToggle.Text = ""
 pcall(callback, enabled)
 
 end
