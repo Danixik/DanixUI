@@ -41,25 +41,7 @@ Main.Position = UDim2.new(-0.000942289829, 0, 0.979424238, 0)
 Main.Size = UDim2.new(0, 324, 0, 375)
 Main.ClipsDescendants = true
 
-local opened = false
 
-local positionclosed = UDim2.new(0.367, 0)(0.297, 0)
-local positionopen = UDim2.new(0, 407,0, 255)
-
-local UIS = game:GetService("UserInputService")
-
-UIS.InputBegan:Connect(function(KeyCode)
-    if KeyCode.KeyCode == Enum.KeyCode.Insert then
-        if opened then
-            DraggableFrame:TweenPosition((positionclosed), "InOut", "Quad", 1)
-            opened = false
-        else
-            DraggableFrame:TweenPosition((positionopen), "InOut", "Quad", 1)
-            opened = true
-        end
-end
-end)
-    
     local offsetX, offsetY = 0, 0
 
     function funcs:CreateButton(text, callback)
