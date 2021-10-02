@@ -56,7 +56,19 @@ Close.TextScaled = true
 Close.TextSize = 14.000
 Close.TextWrapped = true
 Close.ClipsDescendants = true
-    
+Close.MouseButton1Click:Connect(function()
+			if toggled then
+			toggled = false
+			Main:TweenSize(UDim2.new(0, 324,0, 0), "InOut", "Quad", 0.5)
+			wait(0.4)
+			Close.Rotation = 180
+		else
+			toggled = true
+			Main:TweenSize(UDim2.new(0, 324,0, 350), "InOut", "Quad", 0.5)
+			wait(0.4)
+			Close.Rotation = 0
+		end
+		end)
 
     local offsetX, offsetY = 0, 0
 
@@ -90,23 +102,4 @@ end)
 
     return funcs
 end
-
-local script = Instance.new('LocalScript', Close)
-
-	
-	
-	Close.MouseButton1Down:Connect(function()
-		if toggled then
-			toggled = false
-			Main:TweenSize(UDim2.new(0, 324,0, 0), "InOut", "Quad", 0.5)
-			wait(0.4)
-			Close.Rotation = 180
-		else
-			toggled = true
-			Main:TweenSize(UDim2.new(0, 324,0, 350), "InOut", "Quad", 0.5)
-			wait(0.4)
-			Close.Rotation = 0
-		end
-		end)
-
 return library
