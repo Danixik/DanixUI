@@ -1,6 +1,7 @@
 local library = {}
 
 function library:CreateWindow(name)
+    local funcs = {}
     local UILib = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
     local DraggableFrame = Instance.new("Frame")
@@ -41,10 +42,10 @@ Main.Size = UDim2.new(0, 324, 0, 375)
 Main.ClipsDescendants = true
 
 
-	
+    
     local offsetX, offsetY = 0, 0
 
-    function library:CreateButton(text, callback)
+    function funcs:CreateButton(text, callback)
         local Button = Instance.new("TextButton")
         local callback = callback or function() end
     
