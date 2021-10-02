@@ -1,4 +1,5 @@
 local library = {}
+local toggled = false
 
 function library:CreateWindow(name)
     local funcs = {}
@@ -6,6 +7,7 @@ function library:CreateWindow(name)
     local Main = Instance.new("Frame")
     local DraggableFrame = Instance.new("Frame")
     local NameLabel = Instance.new("TextLabel")
+    local Close = Instance.new("TextButton")
 
     DraggableFrame.Name = "DraggableFrame"
     DraggableFrame.Parent = UILib
@@ -40,7 +42,21 @@ Main.BorderColor3 = Color3.fromRGB(55, 55, 55)
 Main.Position = UDim2.new(-0.000942289829, 0, 0.979424238, 0)
 Main.Size = UDim2.new(0, 324, 0, 375)
 Main.ClipsDescendants = true
-
+    
+    Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.916905999, 0, -0.0291647017, 0)
+Close.Size = UDim2.new(0, 26, 0, 26)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "^"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+Close.ClipsDescendants = true
+    
 
     local offsetX, offsetY = 0, 0
 
@@ -74,4 +90,23 @@ end)
 
     return funcs
 end
+
+local script = Instance.new('LocalScript', Close)
+
+	
+	
+	Close.MouseButton1Down:Connect(function()
+		if toggled then
+			toggled = false
+			Main:TweenSize(UDim2.new(0, 324,0, 0), "InOut", "Quad", 0.5)
+			wait(0.4)
+			Close.Rotation = 180
+		else
+			toggled = true
+			Main:TweenSize(UDim2.new(0, 324,0, 350), "InOut", "Quad", 0.5)
+			wait(0.4)
+			Close.Rotation = 0
+		end
+		end)
+
 return library
