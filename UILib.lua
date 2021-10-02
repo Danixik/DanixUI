@@ -143,6 +143,8 @@ OnOfToggle.Text = ""
 OnOfToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 OnOfToggle.TextSize = 14.000
 
+offsetY = offsetY + Toggle.AbsoluteSize.Y + 3
+
 
 
 local function Fire()
