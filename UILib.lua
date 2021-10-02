@@ -44,7 +44,7 @@ Main.Size = UDim2.new(0, 324, 0, 375)
 Main.ClipsDescendants = true
     
     Close.Name = "Close"
-Close.Parent = Main
+Close.Parent = DraggableFrame
 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Close.BackgroundTransparency = 1.000
 Close.Position = UDim2.new(0.916905999, 0, -0.0291647017, 0)
