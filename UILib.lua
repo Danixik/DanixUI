@@ -99,6 +99,10 @@ Close.MouseButton1Click:Connect(function()
 end)
         offsetY = offsetY + Button.AbsoluteSize.Y + 3
     end
+	
+	
+	local offsetX, offsetY = 0, 0
+	
     function funcs:CreateToggle(text, callback)
 local actions = {}
 local enabled = false
@@ -115,11 +119,20 @@ Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.BackgroundTransparency = 1.000
 Toggle.Position = UDim2.new(0.0802469105, 0, 0.134285718, 0)
 Toggle.Size = UDim2.new(0, 100, 0, 22)
+		
+		if (Toggle.AbsolutePosition.Y + 32 > Main.AbsolutePosition.Y + Main.AbsoluteSize.Y) then
+            offsetX = offsetX + Toggle.AbsoluteSize.X + 6
+            offsetY = 0
+            Toggle.Position = UDim2.new(0.0185185224, offsetX, 0.0251473188, offsetY)
+        end
+		
 Toggle.Font = Enum.Font.SourceSans
 Toggle.Text = "Toggle"
 Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.TextSize = 15.000
 Toggle.TextXAlignment = Enum.TextXAlignment.Left
+		
+		offsetY = offsetY + Toggle.AbsoluteSize.Y + 3
 
 Background.Name = "Background"
 Background.Parent = Toggle
@@ -137,7 +150,7 @@ OnOfToggle.Name = "OnOfToggle"
 OnOfToggle.Parent = Background
 OnOfToggle.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
 OnOfToggle.Position = UDim2.new(0.5, 0, 0, 0)
-OnOfToggle.Size = UDim2.new(0, 21, 0, 22)
+OnOfToggle.Size = UDim2.new(0, 42, 0, 22)
 OnOfToggle.Font = Enum.Font.SourceSans
 OnOfToggle.Text = ""
 OnOfToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
