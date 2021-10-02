@@ -99,7 +99,60 @@ Close.MouseButton1Click:Connect(function()
 end)
         offsetY = offsetY + Button.AbsoluteSize.Y + 3
     end
+    function funcs:CreateToggle(text, callback)
+local actions = {}
+local enabled = false
+text = text or "New Toggle"
+callback = callback or function() end
 
+local Toggle = Instance.new("TextLabel")
+local Background = Instance.new("TextButton")
+local OnOfToggle = Instance.new("TextButton")
+
+Toggle.Name = "Toggle"
+Toggle.Parent = Main
+Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.BackgroundTransparency = 1.000
+Toggle.Position = UDim2.new(0.0802469105, 0, 0.134285718, 0)
+Toggle.Size = UDim2.new(0, 100, 0, 22)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Toggle"
+Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.TextSize = 15.000
+Toggle.TextXAlignment = Enum.TextXAlignment.Left
+
+Background.Name = "Background"
+Background.Parent = Toggle
+Background.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Background.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Background.BorderSizePixel = 0
+Background.Position = UDim2.new(0.576666892, 0, 0, 0)
+Background.Size = UDim2.new(0, 42, 0, 22)
+Background.Font = Enum.Font.SourceSans
+Background.Text = ""
+Background.TextColor3 = Color3.fromRGB(0, 0, 0)
+Background.TextSize = 14.000
+
+OnOfToggle.Name = "OnOfToggle"
+OnOfToggle.Parent = Background
+OnOfToggle.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+OnOfToggle.Position = UDim2.new(0.5, 0, 0, 0)
+OnOfToggle.Size = UDim2.new(0, 21, 0, 22)
+OnOfToggle.Font = Enum.Font.SourceSans
+OnOfToggle.Text = ""
+OnOfToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+OnOfToggle.TextSize = 14.000
+
+
+
+local function Fire()
+enabled = not enabled
+OnOfToggle.Text = enabled and utf8.char(10003) or ""
+pcall(callback, enabled)
+
+end
+OnOfToggle.MouseButton1Click:Connect(Fire)
+    end
     return funcs
 end
 return library
