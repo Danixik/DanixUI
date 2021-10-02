@@ -148,7 +148,7 @@ OnOfToggle.TextSize = 14.000
 local function Fire()
 enabled = not enabled
 OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
-OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
+OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(150, 150, 150) or Color3.fromRGB(150, 150, 150)
 OnOfToggle.Text = enabled and utf8.char(10003) or ""
 pcall(callback, enabled)
 
@@ -156,7 +156,7 @@ end
 OnOfToggle.MouseButton1Click:Connect(Fire)
 function actions:Set(arg)
     OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
-    OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
+    OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(150, 150, 150) or Color3.fromRGB(150, 150, 150)
     pcall(callback, arg)
 
 
