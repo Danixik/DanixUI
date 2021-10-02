@@ -113,7 +113,7 @@ Toggle.Name = "Toggle"
 Toggle.Parent = Main
 Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.BackgroundTransparency = 1.000
-Toggle.Position = UDim2.new(0.0802469105, 0, 0.134285718, 0)
+Toggle.Position = UDim2.new(0.0802469105, offsetX, 0.134285718, offsetY)
 Toggle.Size = UDim2.new(0, 100, 0, 22)
 Toggle.Font = Enum.Font.SourceSans
 Toggle.Text = "Toggle"
@@ -126,7 +126,7 @@ Background.Parent = Toggle
 Background.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Background.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Background.BorderSizePixel = 0
-Background.Position = UDim2.new(0.576666892, 0, 0, 0)
+Background.Position = UDim2.new(0.576666892, offsetX, 0, offsetY)
 Background.Size = UDim2.new(0, 42, 0, 22)
 Background.Font = Enum.Font.SourceSans
 Background.Text = ""
@@ -136,7 +136,7 @@ Background.TextSize = 14.000
 OnOfToggle.Name = "OnOfToggle"
 OnOfToggle.Parent = Background
 OnOfToggle.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
-OnOfToggle.Position = UDim2.new(0.5, 0, 0, 0)
+OnOfToggle.Position = UDim2.new(0.5, offsetX, 0, offsetY)
 OnOfToggle.Size = UDim2.new(0, 21, 0, 22)
 OnOfToggle.Font = Enum.Font.SourceSans
 OnOfToggle.Text = ""
@@ -148,7 +148,7 @@ OnOfToggle.TextSize = 14.000
 local function Fire()
 enabled = not enabled
 OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
-OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(150, 150, 150) or Color3.fromRGB(150, 150, 150)
+OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
 OnOfToggle.Text = enabled and utf8.char(10003) or ""
 pcall(callback, enabled)
 
@@ -156,7 +156,7 @@ end
 OnOfToggle.MouseButton1Click:Connect(Fire)
 function actions:Set(arg)
     OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
-    OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(150, 150, 150) or Color3.fromRGB(150, 150, 150)
+    OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
     pcall(callback, arg)
 
 
