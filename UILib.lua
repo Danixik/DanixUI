@@ -199,7 +199,7 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             Slider.Parent = Main
             Slider.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
             Slider.BorderColor3 = Color3.fromRGB(55, 55, 55)
-            Slider.Position = UDim2.new(0.0185185187, 0, 0.288571417, 0)
+            Slider.Position = UDim2.new(0.0185185187, offsetX, 0.288571417, offsetY)
             Slider.Size = UDim2.new(0, 173, 0, 25)
             if (Slider.AbsolutePosition.Y + 32 > Main.AbsolutePosition.Y + Main.AbsoluteSize.Y) then
                 offsetX = offsetX + Toggle.AbsoluteSize.X + 6
