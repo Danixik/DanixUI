@@ -88,7 +88,7 @@ Close.MouseButton1Click:Connect(function()
         if (Button.AbsolutePosition.Y + 32 > Main.AbsolutePosition.Y + Main.AbsoluteSize.Y) then
             offsetX = offsetX + Button.AbsoluteSize.X + 6
             offsetY = 0
-            Button.Position = UDim2.new(0.530, offsetX, 0.0251473188, offsetY)
+            Button.Position = UDim2.new(0, offsetX, 0, offsetY)
         end
         Button.Font = Enum.Font.SourceSans
         Button.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -128,7 +128,7 @@ Toggle.TextXAlignment = Enum.TextXAlignment.Left
 if (Toggle.AbsolutePosition.Y + 32 > Main.AbsolutePosition.Y + Main.AbsoluteSize.Y) then
     offsetX = offsetX + Toggle.AbsoluteSize.X + 6
     offsetY = 0
-    Toggle.Position = UDim2.new(0.530, offsetX, 0, offsetY)
+    Toggle.Position = UDim2.new(0, offsetX, 0, offsetY)
 end
 
 offsetY = offsetY + Toggle.AbsoluteSize.Y + 3 
@@ -204,7 +204,7 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             if (Slider.AbsolutePosition.Y + 32 > Main.AbsolutePosition.Y + Main.AbsoluteSize.Y) then
                 offsetX = offsetX + Toggle.AbsoluteSize.X + 6
                 offsetY = 0
-                Slider.Position = UDim2.new(0.530, offsetX, 0, offsetY)
+                Slider.Position = UDim2.new(0, offsetX, 0, offsetY)
             end
             
             offsetY = offsetY + Slider.AbsoluteSize.Y + 3 
