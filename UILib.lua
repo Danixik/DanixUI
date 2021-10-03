@@ -73,6 +73,7 @@ Close.MouseButton1Click:Connect(function()
     local offsetX, offsetY = 0, 0
 
     function funcs:CreateButton(text, callback)
+	print(offsetX,offsetY)
         local Button = Instance.new("TextButton")
         local callback = callback or function() end
     
@@ -100,6 +101,7 @@ end)
         offsetY = offsetY + Button.AbsoluteSize.Y + 3
     end
     function funcs:CreateToggle(text, callback)
+	print(offsetX,offsetY)
 local actions = {}
 local enabled = false
 text = text or "New Toggle"
@@ -109,24 +111,34 @@ local Toggle = Instance.new("TextLabel")
 local Background = Instance.new("TextButton")
 local OnOfToggle = Instance.new("TextButton")
 
+offsetY = offsetY + 10
+
 Toggle.Name = "Toggle"
 Toggle.Parent = Main
 Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.BackgroundTransparency = 1.000
-Toggle.Position = UDim2.new(0.0802469105, 0, 0.134285718, 0)
-Toggle.Size = UDim2.new(0, 100, 0, 22)
+Toggle.Position = UDim2.new(0.0802469105, offsetX, 0, offsetY)
+Toggle.Size = UDim2.new(0, 119, 0, 22)
 Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "Toggle"
+Toggle.Text = text
 Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.TextSize = 15.000
 Toggle.TextXAlignment = Enum.TextXAlignment.Left
+
+if (Toggle.AbsolutePosition.Y + 32 > Main.AbsolutePosition.Y + Main.AbsoluteSize.Y) then
+    offsetX = offsetX + Toggle.AbsoluteSize.X + 6
+    offsetY = 0
+    Toggle.Position = UDim2.new(0, offsetX, 0, offsetY)
+end
+
+offsetY = offsetY + Toggle.AbsoluteSize.Y + 3 
 
 Background.Name = "Background"
 Background.Parent = Toggle
 Background.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Background.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Background.BorderSizePixel = 0
-Background.Position = UDim2.new(0.576666892, 0, 0, 0)
+Background.Position = UDim2.new(0.576666892, 0, 0.134285718, 0)
 Background.Size = UDim2.new(0, 42, 0, 22)
 Background.Font = Enum.Font.SourceSans
 Background.Text = ""
@@ -145,24 +157,21 @@ OnOfToggle.TextSize = 14.000
 
 
 
+
+
 local function Fire()
 enabled = not enabled
 OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
-OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(255, 55, 37) or Color3.fromRGB(46, 255, 88)
-OnOfToggle.Text = enabled and utf8.char(10003) or ""
+OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
+OnOfToggle.Text = ""
 pcall(callback, enabled)
 
 end
 OnOfToggle.MouseButton1Click:Connect(Fire)
 function actions:Set(arg)
     OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
-    OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(255, 55, 37) or Color3.fromRGB(46, 255, 88)
+    OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
     pcall(callback, arg)
-
-
-
-
-end
 
 function library:CreateSlider(text, minvalue, maxvalue, callback)
 text = text or "Slider"
@@ -254,6 +263,9 @@ releaseconnection = uis.InputEnded:Connect(function(Mouse)
     end
 end)
 end)
+
+end
+
 
 end
     end
