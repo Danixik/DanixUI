@@ -176,6 +176,7 @@ function actions:Set(arg)
 end
 	
 function funcs:CreateSlider(text, minvalue, maxvalue, callback)
+		print(offsetX,offsetY)
             text = text or "Slider"
             minvalue = minvalue or 0
             maxvalue = maxvalue or 100
@@ -191,8 +192,8 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             local SliderButton = Instance.new("TextButton")
             local Sliderinner = Instance.new("Frame")
             local TextLabel = Instance.new("TextLabel")
+		
             offsetY = offsetY + 10
-
 
             Slider.Name = "Slider"
             Slider.Parent = Main
