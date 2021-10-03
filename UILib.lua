@@ -111,7 +111,7 @@ local Toggle = Instance.new("TextLabel")
 local Background = Instance.new("TextButton")
 local OnOfToggle = Instance.new("TextButton")
 
-offsetY = offsetY + 10
+offsetY = offsetY + 7
 
 Toggle.Name = "Toggle"
 Toggle.Parent = Main
@@ -193,7 +193,7 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             local Sliderinner = Instance.new("Frame")
             local TextLabel = Instance.new("TextLabel")
 		
-            offsetY = offsetY + 10
+            offsetY = offsetY + 7
 
             Slider.Name = "Slider"
             Slider.Parent = Main
