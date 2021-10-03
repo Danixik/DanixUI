@@ -172,8 +172,9 @@ function actions:Set(arg)
     OnOfToggle:TweenPosition(enabled and UDim2.new(-0, 0,0, 0) or UDim2.new(0.5, 0,0, 0), "InOut", "Linear", 0.2)
     OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(46, 255, 88) or Color3.fromRGB(255, 55, 37)
     pcall(callback, arg)
+   end
 end
-
+	
 function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             text = text or "Slider"
             minvalue = minvalue or 0
@@ -199,12 +200,12 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             Slider.Size = UDim2.new(0, 173, 0, 25)
 
             SliderText.Name = "SliderText"
-            SliderText.Parent = Main
+            SliderText.Parent = Slider
             SliderText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             SliderText.BackgroundTransparency = 1.000
             SliderText.Size = UDim2.new(0, 130, 0, 10)
             SliderText.Font = Enum.Font.SourceSans
-            SliderText.Text = Slider
+            SliderText.Text = text
             SliderText.TextColor3 = Color3.fromRGB(255, 255, 255)
             SliderText.TextSize = 14.000
             SliderText.TextWrapped = true
@@ -254,7 +255,7 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
                     moveconnection =
                         mouse.Move:Connect(
                         function()
-                            Sliderinner.Text = Value
+                            TextLabel.Text = Value
                             Value =
                                 math.floor(
                                 (((tonumber(maxvalue) - tonumber(minvalue)) / 173) * Sliderinner.AbsoluteSize.X) +
@@ -293,7 +294,6 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
                     )
                 end
             )
-        end
     end
     return funcs
 end
