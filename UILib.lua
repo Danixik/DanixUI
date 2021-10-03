@@ -157,7 +157,7 @@ function library:CreateWindow(name)
                 0.2
             )
             OnOfToggle.BackgroundColor3 = enabled and Color3.fromRGB(255, 55, 37) or Color3.fromRGB(46, 255, 88)
-            OnOfToggle.Text = enabled and utf8.char(10003) or ""
+            OnOfToggle.Text = ""
             pcall(callback, enabled)
         end
         OnOfToggle.MouseButton1Click:Connect(Fire)
