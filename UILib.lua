@@ -77,7 +77,7 @@ Close.MouseButton1Click:Connect(function()
         local Button = Instance.new("TextButton")
         local callback = callback or function() end
     
-		offsetY = offsetY + 1
+		
     
         Button.Name = "Button"
         Button.Parent = Main
@@ -112,7 +112,7 @@ local Toggle = Instance.new("TextLabel")
 local Background = Instance.new("TextButton")
 local OnOfToggle = Instance.new("TextButton")
 
-offsetY = offsetY + 8
+offsetY = offsetY + 10
 
 Toggle.Name = "Toggle"
 Toggle.Parent = Main
@@ -194,7 +194,7 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             local Sliderinner = Instance.new("Frame")
             local TextLabel = Instance.new("TextLabel")
 		
-            offsetY = offsetY + 8
+            offsetY = offsetY + 10
 
             Slider.Name = "Slider"
             Slider.Parent = Main
