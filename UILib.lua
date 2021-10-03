@@ -77,7 +77,6 @@ Close.MouseButton1Click:Connect(function()
         local Button = Instance.new("TextButton")
         local callback = callback or function() end
     
-		
     
         Button.Name = "Button"
         Button.Parent = Main
