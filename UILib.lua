@@ -191,6 +191,8 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             local SliderButton = Instance.new("TextButton")
             local Sliderinner = Instance.new("Frame")
             local TextLabel = Instance.new("TextLabel")
+            offsetY = offsetY + 10
+
 
             Slider.Name = "Slider"
             Slider.Parent = Main
@@ -198,6 +200,13 @@ function funcs:CreateSlider(text, minvalue, maxvalue, callback)
             Slider.BorderColor3 = Color3.fromRGB(55, 55, 55)
             Slider.Position = UDim2.new(0.0185185187, 0, 0.288571417, 0)
             Slider.Size = UDim2.new(0, 173, 0, 25)
+            if (Slider.AbsolutePosition.Y + 32 > Main.AbsolutePosition.Y + Main.AbsoluteSize.Y) then
+                offsetX = offsetX + Toggle.AbsoluteSize.X + 6
+                offsetY = 0
+                Slider.Position = UDim2.new(0, offsetX, 0, offsetY)
+            end
+            
+            offsetY = offsetY + Slider.AbsoluteSize.Y + 3 
 
             SliderText.Name = "SliderText"
             SliderText.Parent = Slider
